@@ -50,10 +50,15 @@ All three highlight the lineage. The difference is *where* the work happens.
 
 The three approaches share the same algebra for reasoning about tree relationships, but the integration point differs dramatically.
 
-**When to use which**:
-- **Reflections**: Easiest to understand; good for simple demos and teaching.
-- **Paths**: For codebases where you control the tree and want explicit paths with compile-time safety.
-- **Echoes**: For tooling-style experiments that observe existing UIs with no code changes.
+### The Demo is in the Code
+
+The app runs, but the relevant demonstration is in the source. Three files implement **identical UI** (the same nested boxes with the same animations):
+
+- `Reflections.kt`
+- `Paths.kt`
+- `Echoes.kt`
+
+Comparing them side-by-side reveals each approach's ergonomic cost. This replicated UI implementation can be found in its pure form, untouched by instrumentation, in `Echoes.kt` as `@Composable fun Untouched()`.
 
 ---
 
